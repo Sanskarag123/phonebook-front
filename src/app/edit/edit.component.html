@@ -1,0 +1,19 @@
+<label>First name</label><br>
+
+<mat-form-field class="up">
+    
+<input matInput name="First" [(ngModel)]="First">
+</mat-form-field>
+<mat-form-field class="up">
+<input matInput name="Last" [(ngModel)]="Last">
+</mat-form-field><br>
+<mat-form-field class="down">
+<input matInput name="number" [(ngModel)]="number">
+</mat-form-field>
+<mat-form-field class="down">
+<input matInput name="Email" [(ngModel)]="Email">
+</mat-form-field><br>
+<mat-form-field class="down">
+    <input matInput name="location" [(ngModel)]="location">
+    </mat-form-field><br>
+<button mat-button (click)="update()">update</button>

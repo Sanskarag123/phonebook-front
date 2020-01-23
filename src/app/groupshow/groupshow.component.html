@@ -1,0 +1,9 @@
+<ng-template  ngFor let-item [ngForOf]="obj">
+    <button mat-button role="listitem" >{{item.groupname}}</button><button mat-button  >add</button><button mat-button  >delete</button><button mat-button (click)="show()" >show</button><br>
+    <ng-template  ngFor let-item [ngForOf]="obj.contact" *ngIf="!sho">
+        <button mat-button role="listitem" >{{item}}</button>
+        
+        
+    </ng-template>
+    
+</ng-template>

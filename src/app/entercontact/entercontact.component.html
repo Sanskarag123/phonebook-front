@@ -1,0 +1,26 @@
+
+ <div class="enter">
+<div class="enter1">
+    <mat-form-field class="example-full-width">
+      <input matInput placeholder="First name" [(ngModel)]="contact.First" >
+    </mat-form-field>
+  
+    <mat-form-field class="example-full-width">
+        <input matInput placeholder="Last name" [(ngModel)]="contact.Last"  >
+      
+    </mat-form-field><br>
+    <mat-form-field class="example-full-width">
+        <input matInput placeholder="Number" [(ngModel)]="contact.number" >
+      
+    </mat-form-field>
+    <mat-form-field class="example-full-width">
+        <input matInput placeholder="Email" [(ngModel)]="contact.Email" >
+      
+    </mat-form-field>
+    <br>
+    <button mat-button  (click)="send()">submit</button>
+ </div>
+</div>
+
+  
+ 

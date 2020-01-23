@@ -1,0 +1,10 @@
+
+    <input name="groupname" placeholder="group name" [(ngModel)]="data.groupname"><br>
+
+<ng-template  ngFor let-item [ngForOf]="l1">
+    <button mat-button role="listitem">{{item.First}}</button><button mat-button (click)="onclick1(item)" >add</button><br>
+    
+</ng-template>
+<br>
+<button mat-button (click)="send()">create</button>
+
