@@ -29,6 +29,13 @@ export class GroupshowComponent implements OnInit,OnChanges {
   {
     this.sho=!this.sho;
   }
+  onclick12(item)
+  {
+    this.back.deletegrpc(item).subscribe((res)=>{
+      console.log(res)
+
+    })
+  }
 
 
 }

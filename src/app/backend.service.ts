@@ -13,6 +13,7 @@ private url2="http://localhost:3000/api/delete"
 private url3="http://localhost:3000/api/update"
 private url4="http://localhost:3000/api/createg"
 private url5="http://localhost:3000/api/retrievegroup"
+private url6="http://localhost:3000/api/deletegc"
 detail$: Observable<any>
   public det=new Subject<any>()
   constructor(private http:HttpClient) {
@@ -42,6 +43,10 @@ detail$: Observable<any>
   groupretrieve()
   {
     return this.http.get<any>(this.url5)
+  }
+  deletegrpc(data)
+  {
+    return this.http.post<any>(this.url6,data)
   }
   detail(item)
   {
