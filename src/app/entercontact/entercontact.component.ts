@@ -25,6 +25,7 @@ public contact={'First':'','Last':'','number':'','Email':'','location':''}
 
       }
     )
+    window.location.reload();
   }
 
 }

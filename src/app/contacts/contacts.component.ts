@@ -31,7 +31,11 @@ export class ContactsComponent implements OnInit {
   {console.log(item)
     this.back.delete(item).subscribe((res)=>{
 console.log("deleted")
+
+
     })
+    window.location.reload();
+  
   }
   onclick1(item)
   {console.log(item)
