@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnChanges, Input } from '@angular/core';
 import { BackendService } from '../backend.service';
 
 @Component({
@@ -6,11 +6,16 @@ import { BackendService } from '../backend.service';
   templateUrl: './groupshow.component.html',
   styleUrls: ['./groupshow.component.css']
 })
-export class GroupshowComponent implements OnInit {
+export class GroupshowComponent implements OnInit,OnChanges {
 
   constructor(private back:BackendService) { }
   public obj=[{'contact':[],'groupname':''}]
-  public sho=false
+  @Input() sho=false
+  public l1=[]
+  ngOnChanges()
+  {
+
+  }
 
   ngOnInit() {
     this.back.groupretrieve().subscribe((res)=>
@@ -22,7 +27,7 @@ export class GroupshowComponent implements OnInit {
   }
   show()
   {
-    this.sho=true;
+    this.sho=!this.sho;
   }
 
 
