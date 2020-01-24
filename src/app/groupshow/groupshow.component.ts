@@ -37,6 +37,7 @@ export class GroupshowComponent implements OnInit,OnChanges {
       console.log(res)
 
     })
+    window.location.reload()
     
   }
   add()
@@ -52,10 +53,11 @@ export class GroupshowComponent implements OnInit,OnChanges {
   }
   onclick123(item,item1)
   {
-      let obj={'groupname':item1,contact:item};
+      let obj={'groupname':item1.groupname,contact:item};
       this.back.groupadd(obj).subscribe((res)=>{
         console.log(res)
       })
+
 
 
   }
