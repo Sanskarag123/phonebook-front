@@ -41,12 +41,13 @@ export class GroupshowComponent implements OnInit,OnChanges {
     
   }
   add()
-  {
+  {this.san=!this.san
     this.back.retrieve().subscribe(res=>{
       console.log(res)
       this.l1=res
+      
     })
-    this.san=!this.san
+    
     
    
     
