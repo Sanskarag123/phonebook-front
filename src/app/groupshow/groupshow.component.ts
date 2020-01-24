@@ -58,6 +58,7 @@ export class GroupshowComponent implements OnInit,OnChanges {
       this.back.groupadd(obj).subscribe((res)=>{
         console.log(res)
       })
+      window.location.reload()
 
 
 
