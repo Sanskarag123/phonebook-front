@@ -19,7 +19,7 @@
     <mat-form-field class="example-full-width">
         <input matInput type="email"  class="form-control" required minlength="4" placeholder="Email" [(ngModel)]="contact.Email" #email="ngModel" >
       
-    </mat-form-field><br><label *ngIf="email.touched && email.invalid">Invalid Email</label><br>
+    </mat-form-field><br><label *ngIf="email.touched && email.invalid ">Invalid Email</label><br>
     <mat-form-field class="example-full-width">
         <input matInput placeholder="address" [(ngModel)]="contact.location" >
       
