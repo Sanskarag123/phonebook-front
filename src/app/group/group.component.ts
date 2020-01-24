@@ -16,7 +16,7 @@ public groupdetail={'gropname':'','contacts':[]};
   public i=0;
   ngOnChanges()
   {
-
+    
   }
 
   ngOnInit() {

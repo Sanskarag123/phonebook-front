@@ -11,7 +11,9 @@ export class GroupshowComponent implements OnInit,OnChanges {
   constructor(private back:BackendService) { }
   public obj=[{'contact':[],'groupname':''}]
   @Input() sho=false
+  @Input() san=false
   public l1=[]
+  
   ngOnChanges()
   {
 
@@ -35,6 +37,41 @@ export class GroupshowComponent implements OnInit,OnChanges {
       console.log(res)
 
     })
+    
+  }
+  add()
+  {
+    this.back.retrieve().subscribe(res=>{
+      console.log(res)
+      this.l1=res
+    })
+    this.san=true
+    
+   
+    
+  }
+  onclick123(item,item1)
+  {
+      let obj={'groupname':item1,contact:item};
+      this.back.groupadd(obj).subscribe((res)=>{
+        console.log(res)
+      })
+
+
+  }
+  show1(item)
+  {
+    if(item)
+    return true
+    else
+    false
+  }
+  deletegroup(item)
+  {
+this.back.deletegrp(item).subscribe((res)=>{
+  console.log("deleted")
+  window.location.reload()
+})
   }
 
 

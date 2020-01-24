@@ -2,21 +2,29 @@
  <div class="enter">
 <div class="enter1">
     <mat-form-field class="example-full-width">
-      <input matInput placeholder="First name" [(ngModel)]="contact.First" >
-    </mat-form-field>
+      <input matInput  class="form-control" required minlength="4" placeholder="First name" [(ngModel)]="contact.First" #first="ngModel" >
+    </mat-form-field><br>
+    <div *ngIf="first.invalid && first.touched" color="red" class="alert alert-danger">You can not leave this field empty</div><br>
+    
   
     <mat-form-field class="example-full-width">
         <input matInput placeholder="Last name" [(ngModel)]="contact.Last"  >
       
     </mat-form-field><br>
+    
     <mat-form-field class="example-full-width">
-        <input matInput placeholder="Number" [(ngModel)]="contact.number" >
+        <input matInput class="form-control" required minlength="10"  placeholder="Number" [(ngModel)]="contact.number" #num="ngModel">
+    </mat-form-field><br>
+    <div *ngIf="num.invalid && num.touched">Number should be of 10 digits</div>
+    <mat-form-field class="example-full-width">
+        <input matInput type="email"  class="form-control" required minlength="4" placeholder="Email" [(ngModel)]="contact.Email" #email="ngModel" >
+      
+    </mat-form-field><br><label *ngIf="email.touched && email.invalid">Invalid Email</label><br>
+    <mat-form-field class="example-full-width">
+        <input matInput placeholder="address" [(ngModel)]="contact.location" >
       
     </mat-form-field>
-    <mat-form-field class="example-full-width">
-        <input matInput placeholder="Email" [(ngModel)]="contact.Email" >
-      
-    </mat-form-field>
+    
     <br>
     <button mat-button  (click)="send()">submit</button>
  </div>

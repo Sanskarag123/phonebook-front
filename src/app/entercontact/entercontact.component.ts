@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, OnChanges } from '@angular/core';
 import{BackendService}from '../backend.service'
 
 
@@ -7,16 +7,27 @@ import{BackendService}from '../backend.service'
   templateUrl: './entercontact.component.html',
   styleUrls: ['./entercontact.component.css']
 })
-export class EntercontactComponent implements OnInit {
+export class EntercontactComponent implements OnInit,OnChanges {
 public contact={'First':'','Last':'','number':'','Email':'','location':''}
 
   constructor(private back:BackendService) { }
+@Input() FirstV=false
+ngOnChanges()
+{
+
+}
 
   ngOnInit() {
   }
 
+
   send()
+  {if(this.contact.First.length==0)
   {
+    this.FirstV=true
+    console.log("yes")
+  }
+  else{
     this.back.create(this.contact).subscribe((res)=>
       {
         
@@ -27,5 +38,7 @@ public contact={'First':'','Last':'','number':'','Email':'','location':''}
     )
     window.location.reload();
   }
+}
+
 
 }

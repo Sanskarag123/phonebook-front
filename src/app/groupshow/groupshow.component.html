@@ -1,7 +1,12 @@
 <ng-template  ngFor let-item [ngForOf]="obj">
-    <button mat-button role="listitem" >{{item.groupname}}</button><button mat-button  >add</button><button mat-button  >delete</button><button mat-button (click)="show()" >show</button><br>
+    <button mat-button role="listitem" >{{item.groupname}}</button><button mat-button (click)="add()" >add</button><button mat-button (click)="deletegroup(item)"  >delete</button><button mat-button (click)="show()" >show</button><br>
     <ng-template  ngFor let-item1 [ngForOf]="item.contact" *ngIf="sho">
         <button mat-button role="listitem" >{{item1.First}}</button><button mat-button (click)="onclick12(item1)" >delete</button><br>
+        
+        
+    </ng-template>
+    <ng-template  ngFor let-item2 [ngForOf]="l1" *ngIf="san">
+        <button mat-button role="listitem" >{{item2.First}}</button><button mat-button (click)="onclick123(item2)" >add</button><br>
         
         
     </ng-template>
