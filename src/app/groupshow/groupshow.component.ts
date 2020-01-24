@@ -46,7 +46,7 @@ export class GroupshowComponent implements OnInit,OnChanges {
       console.log(res)
       this.l1=res
     })
-    this.san=true
+    this.san=!this.san
     
    
     
